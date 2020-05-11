@@ -191,6 +191,8 @@ def scrape():
 
     #click on first hemisphere
     browser.click_link_by_partial_text("Cerberus")
+    #allow at least 2 seconds for page to load
+    time.sleep(2)
 
 
     # In[23]:
@@ -215,7 +217,7 @@ def scrape():
 
     #build link to image from scrape
     for result in results5:
-        cerberusLink = "astrogeology.usgs.gov"+result["src"]
+        cerberusLink = "https://astrogeology.usgs.gov"+result["src"]
         print(cerberusLink)
 
 
@@ -231,6 +233,8 @@ def scrape():
 
     #click on next hemisphere
     browser.click_link_by_partial_text("Schiaparelli")
+    #allow at least 2 seconds for page to load
+    time.sleep(2)
 
 
     # In[153]:
@@ -255,7 +259,7 @@ def scrape():
 
     #build link to image from scrape
     for result in results6:
-        schiaparelliLink = "astrogeology.usgs.gov"+result["src"]
+        schiaparelliLink = "https://astrogeology.usgs.gov"+result["src"]
         print(schiaparelliLink)
 
 
@@ -271,6 +275,8 @@ def scrape():
 
     #click on next hemisphere
     browser.click_link_by_partial_text("Syrtis")
+    #allow at least 2 seconds for page to load
+    time.sleep(2)
 
 
     # In[100]:
@@ -295,7 +301,7 @@ def scrape():
 
     #build link to image from scrape
     for result in results7:
-        syrtisLink = "astrogeology.usgs.gov"+result["src"]
+        syrtisLink = "https://astrogeology.usgs.gov"+result["src"]
         print(syrtisLink)
 
 
@@ -311,6 +317,8 @@ def scrape():
 
     #click on next hemisphere
     browser.click_link_by_partial_text("Valles")
+    #allow at least 2 seconds for page to load
+    time.sleep(2)
 
 
     # In[105]:
@@ -335,7 +343,7 @@ def scrape():
 
     #build link to image from scrape
     for result in results8:
-        vallesLink = "astrogeology.usgs.gov"+result["src"]
+        vallesLink = "https://astrogeology.usgs.gov"+result["src"]
         print(vallesLink)
 
 
