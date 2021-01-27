@@ -1,7 +1,7 @@
 # Mission to Mars
 This project is a part of the [Data Science Bootcamp](https://bootcamp.pe.gatech.edu/data/) at [Georgia Tech](https://bootcamp.pe.gatech.edu/).
 
-#### -- Project Status: [Active]
+#### -- Project Status: [Active - Twitter Scrape Section Not Working]
 
 ## Project Intro/Objective
 The purpose of this project is to gather media and information relating to Mars from multiple websites and compile it in one destination.
@@ -24,6 +24,7 @@ The purpose of this project is to gather media and information relating to Mars 
 
 ## Project Description
 The Mission to Mars app works as a single destination to get all the Mars information you need. The app was built using Flask in Python. The app creates a Mongo database to store the data that will scraped. At the home route, you can view a webpage of all the data, and the /scrape route will run the scraper code to refresh the data.
+![whole_page](Mission_to_Mars/Images/whole_page.png)
 The scraper code is the bulk of the project. Using Beautiful Soup, the weather, news, facts, and image URLs were scraped from various web pages. Mars.nasa.gov stays updated with the latest Mars news, and @MarsWxReport Twitter feed provides a daily weather report from the weather instrument aboard the Curiosity rover. The most recent news article and most recent tweet are all that we need. Facts about Mars were pulled from space-facts.com. Image URLs were obtained from scraping NASA and USGS websites. Splinter was used to navigate to each source between scrapes.
 Upon retrieval of the data, it's compiled in a dictionary format and returned to the Flask app. The app stores the dictionary of Mars data into a Mongo database. The app will then be able to render the newly stored data using an HTML template.
 

@@ -70,7 +70,8 @@ def scrape():
 
 
     #navigate to next URL
-    url2 = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
+    url2 = "https://www.jpl.nasa.gov/spaceimages/"
+    #url2 = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(url2)
 
 
@@ -84,10 +85,12 @@ def scrape():
 
 
     # In[10]:
-
+    browser.click_link_by_id("filter_Mars")
+    time.sleep(2)
 
     #click desired link for featured image
-    browser.click_link_by_partial_text("FULL IMAGE")
+    browser.click_link_by_partial_href("images")
+    #browser.click_link_by_partial_text("FULL IMAGE")
     #allow at least 2 seconds for page to load
     time.sleep(2)
 
@@ -105,7 +108,8 @@ def scrape():
 
 
     #search for image tags and separate first one
-    results2 = soup2.find_all("img", class_="fancybox-image")
+    results2 = soup2.find_all("", class_="BaseImage")
+    #results2 = soup2.find_all("img", class_="fancybox-image")
     results2item = results2[0]
     print(results2item)
 
@@ -114,7 +118,8 @@ def scrape():
 
 
     #build link to image from scraped results
-    featuredLink = "https://www.jpl.nasa.gov"+results2item["src"]
+    featuredLink = results2item.get('data-src')
+    #featuredLink = "https://www.jpl.nasa.gov"+results2item["src"]
     print(featuredLink)
 
 
